@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <h1>Scan the QR Code</h1>
+    <p>Use your phone to scan the QR Code below:</p>
+    <img src="qrcode.png" alt="QR Code">
+    <script>
+        // الحصول على عنوان IP
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                alert(`Your IP Address is: ${data.ip}`);
+            })
+            .catch(error => {
+                console.error("Error fetching IP:", error);
+            });
+    </script>
+</body>
+</html>
